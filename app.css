@@ -1,0 +1,38 @@
+.flipBoard
+{
+    width:200px;
+    height: 200px;
+    margin:10px;
+    float:left;
+}
+.flipBoard > .flipFront
+{
+position: absolute;
+transform: perspective(600px) rotateY(0deg);
+background: red; 
+width: 200px;
+height:200px;
+border-radius: 7px;
+backface-visibility: hidden;
+transition: transform .5s linear 0s;
+}
+.flipBoard > .flipBack
+{
+position: absolute;
+transform: perspective(600px) rotateY(180deg);
+background: red; 
+width: 200px;
+height:200px;
+border-radius: 7px;
+backface-visibility: hidden;
+transition: transform .5s linear 0s;
+}
+.flipBoard:hover > .flipFront
+{
+    transform : perspective(600px) rotateY(-180deg);
+}
+.flipBoard:hover > .flipBack
+{
+    transform : perspective(600px) rotateY(0deg);
+    background: green;
+}
